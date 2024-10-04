@@ -1,0 +1,154 @@
+<header class="h-auto md:mb-8">
+  <div class="header shadow-lg h-20 flex items-center justify-between p-4">
+
+    <p class="h-auto w-[700px] titulo text-4xl mt-3 ">Sorteio Equipes Equilibrado</p>
+    <div class="w-auto h-auto flex gap-4">
+      <p class="m-0 flex items-center text-white text-xl font-normal">
+        Olá, {{ name }}!
+      </p>
+      <button (click)="sair()" class="w-24 h-auto m-0 flex items-center justify-center text-[#0EA900] font-bold bg-white rounded-lg">SAIR</button>
+    </div>
+  </div>
+
+</header>
+
+<div *ngIf="!showCardSorteio" class="flex flex-wrap">
+  <div class="md:w-1/2 flex justify-center max-h-[510px]">
+    <div class="flex flex-col m-3">
+      <div class="header rounded-xl h-14">
+        <p class="text-white justify-center flex items-center text-3xl">
+          JOGADORES
+        </p>
+      </div>
+
+      <table class="flex flex-col border rounded h-auto mt-2">
+        <thead class="text-[#0EA900] rounded h-9 p-2 bg-slate-200 gap-1">
+        <tr class="flex">
+          <th class="text-center border-r-2 border-white">Nome</th>
+          <th class="text-center border-r-2 border-white">Qualidade</th>
+          <th class="text-center border-r-2 border-white">
+            Editar / Excluir
+          </th>
+
+          <th class="flex justify-center">
+            Status
+            <svg *ngIf="showSaveStatus"
+                 (click)="saveStatus()"
+                 style="cursor: pointer"
+                 xmlns="http://www.w3.org/2000/svg"
+                 width="16" height="16"
+                 fill="currentColor"
+                 class="bi bi-floppy w-auto ml-2"
+                 viewBox="0 0 16 16">
+              <path d="M11 2H9v3h2z"/>
+              <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
+            </svg>
+          </th>
+        </tr>
+        </thead>
+        <tbody class="h-auto">
+        <tr *ngFor="let jogador of userCache?.jogadores; let i = index;" class="flex h-9 p-2 gap-1 mt-2 ">
+          <td class="text-center border-r-[1px] ">{{ jogador.name }}</td>
+          <td class="text-center border-r-[1px] ">{{ jogador.level }}</td>
+          <td class="flex items-center border-r-[1px] "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+            <g fill="#0ea900" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M16.9375,1.0625l-13.0625,13.0625l-2.80078,8.80078l8.80078,-2.80078l13.0625,-13.0625c0,0 -0.1,-2.101 -2,-4c-1.9,-1.9 -4,-2 -4,-2zM17.3125,2.6875c1.072,0.204 1.92548,0.65811 2.58398,1.33398c0.6585,0.67587 1.12202,1.57352 1.41602,2.66602l-1.8125,1.8125l-4,-4l1.4375,-1.4375zM4.97852,15.12695c0.01182,0.00298 1.20244,0.304 2.39648,1.49805c1.3,1.2 1.5,2.30078 1.5,2.30078l0.04297,0.05078l-3.54883,1.14258l-1.49609,-1.49609z"></path></g></g>
+          </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+              <g fill="#0ea900" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10,2l-1,1h-4c-0.6,0 -1,0.4 -1,1c0,0.6 0.4,1 1,1h2h10h2c0.6,0 1,-0.4 1,-1c0,-0.6 -0.4,-1 -1,-1h-4l-1,-1zM5,7v13c0,1.1 0.9,2 2,2h10c1.1,0 2,-0.9 2,-2v-13zM9,9c0.6,0 1,0.4 1,1v9c0,0.6 -0.4,1 -1,1c-0.6,0 -1,-0.4 -1,-1v-9c0,-0.6 0.4,-1 1,-1zM15,9c0.6,0 1,0.4 1,1v9c0,0.6 -0.4,1 -1,1c-0.6,0 -1,-0.4 -1,-1v-9c0,-0.6 0.4,-1 1,-1z"></path></g></g>
+            </svg></td>
+          <td>
+            <input type="checkbox" class="checkbox-row" [checked]="jogador.status" [(ngModel)]="jogador.status" (click)="showSaveStatus2()"/>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="md:w-1/2 flex flex-col max-h-[509px]">
+    <!--
+        <div class="flex items-center justify-center">
+          <div class="bg-[#E2E2E2] w-auto h-auto rounded-xl p-3">
+              <div class="w-full flex flex-col items-center">
+                <p class="text-center text-2xl font-medium text-[#797979] mb-1">
+                  Novo Jogador
+                </p>
+                <label class="text-base text-[#797979]" for="name">Nome</label>
+
+                <input
+                  class="pl-2 w-full h-auto bg-white rounded-3xl border-2 border-[#0EA900] mt-1"
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Digite o nome do jogador"
+                />
+
+                <label class="text-base text-[#797979]" for="">Qualidade</label>
+                <div class="flex gap-3">
+                  <input
+                    class="pl-2 w-auto h-[22.07px] bg-white rounded-3xl border-2 border-[#0EA900] mt-1"
+                    type="text"
+                    name=""
+                    placeholder="Informe a qualidade"
+                  />
+                  <button
+                    class="bg-[#0EA900] w-32 rounded-xl p-1 h-auto font-bold text-center text-white"
+                  >
+                    Adicionar
+                  </button>
+                </div>
+              </div>
+          </div>
+        </div>
+    -->
+
+    <div class="flex items-center justify-center">
+      <div class="bg-[#E2E2E2] w-auto h-auto rounded-xl p-3">
+        <div [formGroup]="formSorteio" class="w-100 flex flex-col items-center">
+          <div class="w-full flex items-center">
+            <div class="flex flex-column">
+              <label class="text-base text-[#797979]">Nº de Opções</label>
+
+              <input
+                class="pl-2 max-w-[158px] h-auto bg-white rounded-3xl border-2 border-[#0EA900] mt-1"
+                id="numero_opcoes"
+                type="number"
+                formControlName="numero_opcoes"
+              />
+              <mat-error *ngIf="formSorteioInvalid">Campo obrigatório</mat-error>
+            </div>
+          </div>
+
+          <div class="flex flex-column">
+            <label class="text-base text-[#797979]">Nº de Equipes</label>
+
+            <input
+              class="pl-2 max-w-[158px]  bg-white rounded-3xl border-2 border-[#0EA900] mt-1"
+              id="numero_equipes"
+              type="number"
+              formControlName="numero_equipes"
+            />
+
+            <mat-error *ngIf="formSorteioInvalid">Campo obrigatório</mat-error>
+
+            <button
+              class="bg-[#0EA900] w-32 rounded-xl p-1 h-auto font-bold text-center text-white"
+              (click)="sortear()"
+            >
+              Sortear
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-card-sorteado
+  *ngIf="showCardSorteio"
+  [equipesSorteadasInput] = "equipesSorteadas"
+  (equipesSorteadasOutput) = "emitShowCardSorteio($event)"
+></app-card-sorteado>
+
+<footer class="header h-8"></footer>

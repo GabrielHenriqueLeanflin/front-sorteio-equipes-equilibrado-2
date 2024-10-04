@@ -1,0 +1,46 @@
+<div class="flex flex-wrap">
+  <div class="w-full md:w-1/2 imagem-background p-5 flex justify-center items-center">
+    <div class="flex flex-col justify-center">
+      <div class="md:mb-24 text-5xl h-auto text-center titulo">
+        Sorteio de Equipes
+        <br />Equilibrado
+      </div>
+
+      <div class="card mb-3 mx-auto p-3 sm:p-2 md:p-4 max-w-3xl">
+        <div class="card-body flex flex-col items-center">
+          <p class="card-title text-3xl h-auto mt-3 mb-3 text-center font-bold">
+            Você é novo?
+          </p>
+          <div class="text-center mt-3 h-auto">
+            <span>1. Crie sua conta</span>
+          </div>
+          <div class="text-center mt-2 h-auto">
+            <span>2. Cadastre os jogadores e nível de qualidade de cada um.</span>
+          </div>
+          <div class="text-center mt-2 h-auto">
+            <span
+            >3. Defina a quantidade de jogadores e de times que devem ser
+              sorteados</span
+            >
+          </div>
+          <div class="text-center mt-2 h-auto">
+            <span>4. Agora é só sortear!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col w-full md:w-1/2">
+    <div class="flex items-center">
+      <app-login
+        *ngIf="!showCadastro"
+        (showCardCadastro)="showCardCadastro($event)"
+      ></app-login>
+
+      <app-cadastro
+        *ngIf="showCadastro"
+      ></app-cadastro>
+    </div>
+  </div>
+</div>
