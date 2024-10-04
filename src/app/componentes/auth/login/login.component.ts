@@ -2,6 +2,7 @@ import {Component, inject, OnInit, output} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthService} from "../../../core/services/auth.service";
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   private formBuilder = inject(FormBuilder);
   private router = inject(Router);
   private authService = inject(AuthService);
+  private matSnackBar = inject(MatSnackBar);
 
   /** OUTPUT */
   public showCardCadastro = output<boolean>();
@@ -43,11 +45,16 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user', res.name)
         localStorage.setItem('id', res.id)
         this.router.navigate(['/dashboard']);
-        alert(res.message)
+        this.matSnackBar.open(res.message, 'Ok', {
+          duration: 5000,
+          verticalPosition: 'top',
+        });
       },
       (error) => {
-        console.log(error)
-        alert(error.error.message)
+        this.matSnackBar.open(error.error, 'Ok', {
+          duration: 5000,
+          verticalPosition: 'top',
+        });
       }
     )
   }

@@ -22,7 +22,7 @@ import {PlayersService} from "../../core/services/players.service";
 })
 export class DashboardComponent implements OnInit {
   /** Injects */
-  public usersService = inject(AuthService);
+  public authService = inject(AuthService);
   public playersService = inject(PlayersService)
   public formBuilder = inject(FormBuilder);
 
@@ -133,7 +133,7 @@ export class DashboardComponent implements OnInit {
   }
 
   sair() {
-    this.usersService.logout();
+    this.authService.logout();
   }
 
   emitShowCardSorteio($event: any) {

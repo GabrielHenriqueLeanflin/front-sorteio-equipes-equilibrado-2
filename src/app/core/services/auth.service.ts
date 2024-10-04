@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
 import {Observable} from "rxjs";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,8 @@ import {Observable} from "rxjs";
 export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router) ;
+  private matSnackBar = inject(MatSnackBar);
+
 
   constructor() { }
 
@@ -24,6 +27,10 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');
     this.router.navigate(['/']);
+    this.matSnackBar.open('Deslogado!', 'Ok', {
+      duration: 5000,
+      verticalPosition: 'top',
+    });
   }
 
   isLoggedIn(): boolean {
