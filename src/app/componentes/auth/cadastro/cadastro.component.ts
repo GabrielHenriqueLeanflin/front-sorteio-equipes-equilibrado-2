@@ -10,7 +10,7 @@ import {AuthService} from "../../../core/services/auth.service";
     ReactiveFormsModule
   ],
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.css'
+  styleUrl: './cadastro.component.scss'
 })
 export class CadastroComponent implements OnInit {
   /** INJECTS */

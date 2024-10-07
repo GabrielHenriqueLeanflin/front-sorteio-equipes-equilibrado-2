@@ -11,7 +11,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     ReactiveFormsModule
   ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
   /** INJECTS */
