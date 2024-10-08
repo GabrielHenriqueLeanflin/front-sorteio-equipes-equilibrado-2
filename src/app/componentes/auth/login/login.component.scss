@@ -1,0 +1,60 @@
+@import '../../../../styles.scss';
+
+.card-login{
+  background-color: $secondary-color;
+  font-family: $subtitle-font;
+  width: 31rem;
+  height: 28.5rem;
+  top: 540px;
+  left: 199px;
+  border-radius: 42px 42px 0px 0px;
+}
+
+.card-control{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.subtitle{
+  font-family: $sub-subtitle-font;
+  font-size: 1.75rem;
+  padding: 20px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+input{
+  border: none;
+  background-color: $hard-color;
+  height: 3rem;
+  border-radius: 5px;
+  width: 25rem;
+}
+
+input::placeholder {
+  background-color: $hard-color;
+  color: $medium-color;
+  font-style: italic;
+
+}
+
+.button-enter{
+  background-color: $detail-color;
+  border: none;
+  padding: 20px 73px 20px 73px;
+  gap: 10px;
+  border-radius: 16px;
+  width: 432.51px;
+  height: 68.3px;
+  font-family: $subtitle-font;
+  font-size: 1.5rem;
+  color: $hard-color;
+}
