@@ -1,87 +1,93 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
-
-//cores
+/** COLORS */
 $primary-color: #1F1D2B;
 $secondary-color: #222232;
-$detail-color: #C8F558;
+$tertiary-color: #0C02A6;
+$green-color: #C8F558;
 $light-color: #FFFFFF;
+$black-color: #000000;
 $medium-color: #65656B;
-$hard-color: #181829;
 
+/* You can add global styles to this file, and also import other style files */
+html, body {margin: 0; padding: 0; height: 100% ;width: 100%;}
+app-home{ display: flex; height: 100%; width: 100%; }
+div, section, form { display: flex }
 
-//fontes
-$title-font: "Lexend", sans-serif;
-$subtitle-font: "Inter", sans-serif;
-$sub-subtitle-font: "Source Code Pro", monospace;
+/** SNACK BAR */
+.mat-mdc-snack-bar-container .mdc-snackbar__label { color: $tertiary-color!important; }
+.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) { color: $tertiary-color!important; }
+.mat-mdc-snack-bar-container .mdc-snackbar__surface { background-color: $light-color!important; }
 
-/* Eric Meyer’s Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0 !important;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+/** BACKGROUND */
 body {
-  line-height: 1;
-}
-ol, ul {
-  list-style: none;
-}
-blockquote, q {
-  quotes: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+  background-color: $primary-color;
+  font-family: "Source Sans 3", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-/* Eric Meyer’s Reset */
+.mx-auto { margin-left: auto!important; margin-right: auto!important; }
+.pt-4 { padding-top: 4rem!important; } .pl-8 { padding-left: 8rem; }
 
-
-/* Estilos para o MatSnackBar */
-.mat-mdc-snack-bar-container .mdc-snackbar__label {
-  color: #0080ff!important;
+h1 { line-height: 6rem!important; margin: 0!important; font-family: "Lexend", sans-serif!important; font-size: 5rem!important; color: $light-color; font-weight: 600 !important;
+  @media (max-width: 768px) {
+    font-size: 2rem!important;
+    font-weight: 500 !important;
+  }
 }
 
-.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) {
-  color: #0080ff!important;
+h4 { font-size: 2rem!important; color: $light-color; font-weight: 400 !important;
+  @media (max-width: 768px) {
+    font-size: 0.5rem!important;
+    font-weight: 200 !important;
+  }
 }
 
-.mat-mdc-snack-bar-container .mdc-snackbar__surface {
-  background-color: white!important;
+ul {margin: 0;padding: 0;list-style: none;
+  li {font-family: "Inter", sans-serif!important; color: $light-color; position: relative; padding-left: 25px; margin-bottom: 40px; font-size: 1.4rem!important;
+    &::before {content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background-color: $green-color;/* Cor verde-limão */border-radius: 50%; /* Torna o marcador circular */}
+  }
 }
 
-.pt-3{
-  padding-top: 3rem;
+a {
+  text-decoration: none;
+  cursor: pointer!important;
+  font-family: "Source Sans 3", sans-serif;
+  color: $light-color!important;
+  font-size: 0.9rem!important;
+  font-weight: 200!important;
 }
 
-.pl-5{
-  padding-left: 5rem;
+input {
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem!important;
+  outline: none;
+  font-family: "Source Sans 3", sans-serif!important;
+  font-size: 1rem!important;
+  color: $light-color !important;
+  background-color: $primary-color!important;
 }
 
-.auto-ajust {
-  display: inline-block;
-  height: auto;
-  width: auto;
+input::placeholder {
+  font-family: "Source Sans 3", sans-serif!important;
+  font-size: 1rem!important;
+  font-weight: 400!important;
+  color: $medium-color; /* Define a cor do placeholder */
+}
+
+.card-user {
+  background-color: $secondary-color;
+  width: 75%;
+  height: 24rem;
+  border-radius: 10%;
+}
+
+.btn {
+  font-family: "Source Sans 3", sans-serif!important;
+  font-weight: bold!important;
+  color: $black-color!important;
+  border: $green-color!important;
+  background-color: $green-color!important;
 }

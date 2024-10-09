@@ -1,51 +1,22 @@
-<div class="pt-3 pl-5">
-  <div class="card-login">
-    <div></div>
-    <p class="subtitle">
-      Bem vindo!
-    </p>
-  <div>
-    <form
-      [formGroup]="loginForm"
-      (submit)="onSubmit($event)"
-      class="form-control"
-    >
-      <div class="form-control">
-        <input
-          class=""
-          id="email"
-          type="email"
-          name="email"
-          formControlName="email"
-          placeholder="E-mail"
-        />
-        <input
-          class=""
-          id="password"
-          type="password"
-          name="password"
-          formControlName="password"
-          placeholder="Senha"
-        />
+<section class="card-user p-4">
+  <div class="h-100 w-100 flex-column">
 
-      </div>
+    <hr class="line mx-auto mt-0">
 
-        <!--        <div class="">
-                  <a class="esqueci-senha">Esqueci minha senha</a>
-                </div>-->
+    <h4 class="mt-4 mb-0"> Bem vindo!</h4>
 
-      <button
-        type="submit"
-        class="button-enter"
-      >
+    <form class="mt-4 flex-column h-100" [formGroup]="loginForm" (submit)="onSubmit($event)">
+
+      <input class="h-25" id="email" type="email" name="email" formControlName="email" placeholder="E-mail"/>
+      <input class="h-25 mt-4" id="password" type="password" name="password" formControlName="password" placeholder="Senha"/>
+
+      <button class="btn btn-primary w-50 mt-4 mx-auto" type="submit">
         Entrar
       </button>
+
+      <a class="mt-2 mx-auto" (click)="clickCadastro(true)">
+        Faça seu cadastro aqui!
+      </a>
     </form>
   </div>
-    <a
-      class="form-control"
-      (click)="clickCadastro(true)"
-    >Faça seu cadastro
-    </a>
-  </div>
-</div>
+</section>

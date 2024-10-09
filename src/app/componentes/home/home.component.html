@@ -1,29 +1,15 @@
-<div class="background vector-image">
-    <div class="pt-3 pl-5">
-      <div class="title">
-        Sorteio Equipes Equilibrado
-      </div>
+<section class="pl-8 pt-4 flex-column">
+      <h1>
+        Sorteio Equipes <br> Equilibrado
+      </h1>
 
-      <div class="subtitle pt-3">
-
-          <div class="card-initial">
-          <div class="circle-topic"></div>
-          <p >Adicione seus jogadores.</p>
-          </div>
-        <div class="card-initial">
-          <div class="circle-topic"></div>
-          <p >Sorteie de forma equilibrada.</p>
-        </div>
-        <div class="card-initial">
-        <div class="circle-topic"></div>
-        <p >Jogadores com niveís de qualidade.</p>
-      </div>
-
-      </div>
-    </div>
+        <ul class="mt-4">
+          <li>Adicione seus jogadores.</li>
+          <li>Sorteie de forma equilibrada.</li>
+          <li>Jogadores com niveís de qualidade.</li>
+        </ul>
 
       <app-login
-        class="auto-ajust"
         *ngIf="!showCadastro"
         (showCardCadastro)="showCardCadastro($event)"
       ></app-login>
@@ -31,4 +17,5 @@
       <app-cadastro
         *ngIf="showCadastro"
       ></app-cadastro>
-</div>
+
+</section>

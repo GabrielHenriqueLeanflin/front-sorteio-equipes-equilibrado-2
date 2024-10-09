@@ -1,0 +1,22 @@
+.background-image {
+  background-image: url(/assets/images/background.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    background-size: 100% 50%;
+  }
+}
+
+.background-grandient {
+  background-image: url(/assets/images/gradient.png);
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    background-size: 100% 50%;
+  }
+}
