@@ -13,8 +13,7 @@ $medium-color: #65656B;
 
 /* You can add global styles to this file, and also import other style files */
 html, body {margin: 0; padding: 0; height: 100% ;width: 100%;}
-app-home{ display: flex; height: 100%; width: 100%; }
-div, section, form { display: flex }
+app-home{  height: 100%; width: 100%; }
 
 /** SNACK BAR */
 .mat-mdc-snack-bar-container .mdc-snackbar__label { color: $tertiary-color!important; }
@@ -80,9 +79,9 @@ input::placeholder {
 
 .card-user {
   background-color: $secondary-color;
-  width: 75%;
+  width: 28rem;
   height: auto;
-  border-radius: 10%;
+  border-radius: 2rem;
 }
 
 .btn {

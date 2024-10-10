@@ -5,7 +5,7 @@
 
     <h4 class="mt-4 mb-0"> Bem vindo!</h4>
 
-    <form class="mt-4 flex-column h-100" [formGroup]="loginForm" (submit)="onSubmit($event)">
+    <form class="d-flex mt-4 flex-column h-100" [formGroup]="loginForm" (submit)="onSubmit($event)">
 
       <input class="h-25" id="email" type="email" name="email" formControlName="email" placeholder="E-mail"/>
       <input class="h-25 mt-4" id="password" type="password" name="password" formControlName="password" placeholder="Senha"/>

@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit(event: Event){
     event.preventDefault();
-    this.authService.login(this.loginForm.value).subscribe(
-      (res) => {
+    this.authService.login(this.loginForm.value).subscribe({
+      next: (res) => {
         localStorage.setItem('token', res.token)
         localStorage.setItem('user', res.name)
         localStorage.setItem('id', res.id)
@@ -49,14 +49,13 @@ export class LoginComponent implements OnInit {
           duration: 5000,
           verticalPosition: 'top',
         });
-      },
-      (error) => {
-        this.matSnackBar.open(error.error, 'Ok', {
-          duration: 5000,
+      }, error: (error) => {
+        this.matSnackBar.open('Dados inválidos!', 'Ok', {
+          duration: 500000,
           verticalPosition: 'top',
         });
       }
-    )
+    })
   }
 
   clickCadastro(event: boolean) {
