@@ -116,10 +116,10 @@ hr {
   height: auto;
   border-radius: 2rem;
   @media (min-width: 768px) and (max-width: 1024px) {
-    width: 23.5rem;
+    width: 100%!important;
   }
   @media (max-width: 767px) {
-    width: 20rem;
+    width: 100%!important;
     height: 18rem;
     margin-top: 2rem;
   }
