@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         });
       }, error: (error) => {
         this.matSnackBar.open('Dados inválidos!', 'Ok', {
-          duration: 500000,
+          duration: 5000,
           verticalPosition: 'top',
         });
       }
