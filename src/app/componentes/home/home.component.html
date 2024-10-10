@@ -1,7 +1,8 @@
-<section class="pl-8 pt-4 pb-5 flex-column">
-      <h1>
-        Sorteio Equipes <br> Equilibrado
-      </h1>
+<section class="d-flex pl-8 pt-4 pb-5">
+      <div class="d-flex flex-column home-div1">
+        <h1>
+          Sorteio Equipes <br> Equilibrado
+        </h1>
 
         <ul class="mt-4">
           <li>Adicione seus jogadores.</li>
@@ -9,13 +10,18 @@
           <li>Jogadores com niveís de qualidade.</li>
         </ul>
 
-      <app-login
-        *ngIf="!showCadastro"
-        (showCardCadastro)="showCardCadastro($event)"
-      ></app-login>
+        <app-login
+          *ngIf="!showCadastro"
+          (showCardCadastro)="showCardCadastro($event)"
+        ></app-login>
 
-      <app-cadastro
-        *ngIf="showCadastro"
-      ></app-cadastro>
+        <app-cadastro
+          *ngIf="showCadastro"
+        ></app-cadastro>
+      </div>
 
+      <div class="home-div2">
+        <img src="/assets/images/home_1.png" style="width: 72rem;" alt="home_1">
+        <img src="/assets/images/home_2.png" style=" overflow: hidden;  position: relative; bottom: 13rem; left: 14rem; width: 53rem;" alt="home_2">
+      </div>
 </section>

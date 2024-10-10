@@ -27,9 +27,12 @@ body {
   color: $light-color;
 }
 
+/** OUTROS */
 .mx-auto { margin-left: auto!important; margin-right: auto!important; }
 .pt-4 { padding-top: 4rem!important; } .pl-8 { padding-left: 8rem; }
 
+
+/** OUTROS */
 h1 { line-height: 6rem!important; margin: 0!important; font-family: "Lexend", sans-serif!important; font-size: 5rem!important; color: $light-color; font-weight: 600 !important;
   @media (max-width: 768px) {
     font-size: 2rem!important;
@@ -77,13 +80,7 @@ input::placeholder {
   color: $medium-color; /* Define a cor do placeholder */
 }
 
-.card-user {
-  background-color: $secondary-color;
-  width: 28rem;
-  height: auto;
-  border-radius: 2rem;
-}
-
+/** BOTAO BOOSTRAP */
 .btn {
   font-family: "Source Sans 3", sans-serif!important;
   font-weight: bold!important;
@@ -91,3 +88,18 @@ input::placeholder {
   border: $green-color!important;
   background-color: $green-color!important;
 }
+
+/** CARD LOGIN USER */
+.card-user {
+  background-color: $secondary-color;
+  width: 28rem;
+  height: auto;
+  border-radius: 2rem;
+}
+
+
+/** HOME COMPONENT */
+.home-div1 { width: 40% }
+
+.home-div2 { width: 60%; height: 50rem; overflow: hidden }
+
