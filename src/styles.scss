@@ -25,6 +25,7 @@ div, section, form { display: flex }
 body {
   background-color: $primary-color;
   font-family: "Source Sans 3", sans-serif;
+  color: $light-color;
 }
 
 .mx-auto { margin-left: auto!important; margin-right: auto!important; }

@@ -1,0 +1,12 @@
+@import '../../../styles.scss';
+
+.header{
+  background-color: $secondary-color;
+  min-width: 100vh;
+  height: 117px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    background-size: 100% 50%;
+  }
+}

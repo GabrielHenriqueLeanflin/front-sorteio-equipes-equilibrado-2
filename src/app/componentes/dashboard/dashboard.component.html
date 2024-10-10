@@ -1,21 +1,17 @@
-<header class="h-auto md:mb-8">
-  <div class="header shadow-lg h-20 flex items-center justify-between p-4">
-
-    <p class="h-auto w-[700px] titulo text-4xl mt-3 ">Sorteio Equipes Equilibrado</p>
-    <div class="w-auto h-auto flex gap-4">
-      <p class="m-0 flex items-center text-white text-xl font-normal">
+<header class="header">
+  <h2>
+    Sorteio Equipes Equilibrado
+  </h2>
+      <p class="">
         Olá, {{ name }}!
       </p>
-      <button (click)="sair()" class="w-24 h-auto m-0 flex items-center justify-center text-[#0EA900] font-bold bg-white rounded-lg">SAIR</button>
-    </div>
-  </div>
-
+      <button (click)="sair()" class="">SAIR</button>
 </header>
 
-<div *ngIf="!showCardSorteio" class="flex flex-wrap">
-  <div class="md:w-1/2 flex justify-center max-h-[510px]">
+<div *ngIf="!showCardSorteio" class="">
+  <div class="">
     <div class="flex flex-col m-3">
-      <div class="header rounded-xl h-14">
+      <div class=" rounded-xl h-14">
         <p class="text-white justify-center flex items-center text-3xl">
           JOGADORES
         </p>
@@ -50,12 +46,8 @@
         <tr *ngFor="let jogador of userCache?.jogadores; let i = index;" class="flex h-9 p-2 gap-1 mt-2 ">
           <td class="text-center border-r-[1px] ">{{ jogador.name }}</td>
           <td class="text-center border-r-[1px] ">{{ jogador.level }}</td>
-          <td class="flex items-center border-r-[1px] "><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
-            <g fill="#0ea900" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M16.9375,1.0625l-13.0625,13.0625l-2.80078,8.80078l8.80078,-2.80078l13.0625,-13.0625c0,0 -0.1,-2.101 -2,-4c-1.9,-1.9 -4,-2 -4,-2zM17.3125,2.6875c1.072,0.204 1.92548,0.65811 2.58398,1.33398c0.6585,0.67587 1.12202,1.57352 1.41602,2.66602l-1.8125,1.8125l-4,-4l1.4375,-1.4375zM4.97852,15.12695c0.01182,0.00298 1.20244,0.304 2.39648,1.49805c1.3,1.2 1.5,2.30078 1.5,2.30078l0.04297,0.05078l-3.54883,1.14258l-1.49609,-1.49609z"></path></g></g>
-          </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
-              <g fill="#0ea900" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M10,2l-1,1h-4c-0.6,0 -1,0.4 -1,1c0,0.6 0.4,1 1,1h2h10h2c0.6,0 1,-0.4 1,-1c0,-0.6 -0.4,-1 -1,-1h-4l-1,-1zM5,7v13c0,1.1 0.9,2 2,2h10c1.1,0 2,-0.9 2,-2v-13zM9,9c0.6,0 1,0.4 1,1v9c0,0.6 -0.4,1 -1,1c-0.6,0 -1,-0.4 -1,-1v-9c0,-0.6 0.4,-1 1,-1zM15,9c0.6,0 1,0.4 1,1v9c0,0.6 -0.4,1 -1,1c-0.6,0 -1,-0.4 -1,-1v-9c0,-0.6 0.4,-1 1,-1z"></path></g></g>
-            </svg></td>
+          <td class="">
+
           <td>
             <input type="checkbox" class="checkbox-row" [checked]="jogador.status" [(ngModel)]="jogador.status" (click)="showSaveStatus2()"/>
           </td>
@@ -151,4 +143,3 @@
   (equipesSorteadasOutput) = "emitShowCardSorteio($event)"
 ></app-card-sorteado>
 
-<footer class="header h-8"></footer>
