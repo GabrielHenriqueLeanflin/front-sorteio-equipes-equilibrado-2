@@ -1,0 +1,13 @@
+@import '../../../../styles.scss';
+
+hr {
+  border: none;
+  height: 0.4rem;
+  background-color: $medium-color!important;
+  opacity: 35%;
+  width: 30%;
+}
+
+.destaque{
+  color: $green-color;
+}
