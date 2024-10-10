@@ -42,7 +42,8 @@ h1 { line-height: 6rem!important; margin: 0!important; font-family: "Lexend", sa
 
 h4 { font-size: 2rem!important; color: $light-color; font-weight: 400 !important;
   @media (max-width: 768px) {
-    font-size: 0.5rem!important;
+    margin-top: 1rem!important;
+    font-size: 1.5rem !important;
     font-weight: 200 !important;
   }
 }
@@ -60,17 +61,26 @@ a {
   color: $light-color!important;
   font-size: 0.9rem!important;
   font-weight: 200!important;
+  @media (max-width: 767px) {
+    font-size: 0.7rem!important;
+  }
 }
 
 input {
+  height: 3rem !important;
   border: none;
   border-radius: 1rem;
-  padding: 1rem!important;
+  padding: 0.2rem!important;
   outline: none;
   font-family: "Source Sans 3", sans-serif!important;
   font-size: 1rem!important;
   color: $light-color !important;
   background-color: $primary-color!important;
+  @media (max-width: 767px) {
+    margin-top: 0.5rem!important;
+    height: 2.8rem !important;
+    border-radius: 0.5rem;
+  }
 }
 
 input::placeholder {
@@ -80,6 +90,13 @@ input::placeholder {
   color: $medium-color; /* Define a cor do placeholder */
 }
 
+hr {
+  @media (max-width: 767px) {
+    height: 0.2rem!important;
+    margin-bottom: 0;
+  }
+}
+
 /** BOTAO BOOSTRAP */
 .btn {
   font-family: "Source Sans 3", sans-serif!important;
@@ -87,19 +104,25 @@ input::placeholder {
   color: $black-color!important;
   border: $green-color!important;
   background-color: $green-color!important;
+  @media (max-width: 767px) {
+    margin-top: 1rem!important;
+  }
 }
 
-/** CARD LOGIN USER */
+/** CARD LOGIN e CADASTRO */
 .card-user {
   background-color: $secondary-color;
   width: 28rem;
   height: auto;
   border-radius: 2rem;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 23.5rem;
+  }
+  @media (max-width: 767px) {
+    width: 20.5rem;
+    height: 18rem;
+  }
 }
 
 
-/** HOME COMPONENT */
-.home-div1 { width: 40% }
-
-.home-div2 { width: 60%; height: 50rem; overflow: hidden }
 
