@@ -1,11 +1,17 @@
-<header class="header">
+<header class="header d-flex justify-content-between">
   <h2>
     Sorteio Equipes Equilibrado
   </h2>
-      <p class="">
-        Olá, {{ name }}!
-      </p>
-      <button (click)="sair()" class="">SAIR</button>
+
+  <div class="d-flex align-items-center userSair">
+    <p>
+      Olá, <strong>{{ name }}</strong>!
+    </p>
+
+    <hr>
+
+    <a (click)="sair()"> Sair </a>
+  </div>
 </header>
 
 <div *ngIf="!showCardSorteio" class="">

@@ -17,6 +17,7 @@
 
         <app-cadastro
           *ngIf="showCadastro"
+          (showCardCadastro)="showCardCadastro($event)"
         ></app-cadastro>
       </div>
 
@@ -29,9 +30,9 @@
         <h2 class="text-center fw-light mb-5">Prévia:</h2>
         <img src="/assets/images/dashboard_mobile.png"
              class="shadow"
-             style="width: auto; height: auto; transform: rotate(350deg); border: 3px solid white; border-radius: 10px;" alt="home_1">
+             style="width: auto; height: auto; transform: rotate(350deg); border: 1px solid white; border-radius: 10px;" alt="home_1">
         <img src="/assets/images/sorteado_mobile.png"
              class="shadow"
-             style="width: auto; height: auto; transform: rotate(9deg); border: 3px solid white; border-radius: 10px;" alt="home_1">
+             style="width: auto; height: auto; transform: rotate(9deg); border: 1px solid white; border-radius: 10px;" alt="home_1">
       </div>
 </section>

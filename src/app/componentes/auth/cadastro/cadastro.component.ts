@@ -1,6 +1,5 @@
 import {Component, inject, OnInit, output} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
 import {AuthService} from "../../../core/services/auth.service";
 
 @Component({
@@ -18,7 +17,7 @@ export class CadastroComponent implements OnInit {
   private authService = inject(AuthService);
 
   /** OUTPUT */
-  public showCardCadastro = output<boolean>();
+  public showCardCadastro = output<any>();
 
   /** FORM */
   public cadastroForm: FormGroup;
@@ -32,23 +31,21 @@ export class CadastroComponent implements OnInit {
       name: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      confirm_password: ['', [Validators.required]],
     });
   }
 
   onSubmit(event: Event) {
     event.preventDefault();
-    this.authService.createUser(this.cadastroForm.value).subscribe(
-      (res: any) => {
+    this.authService.createUser(this.cadastroForm.value).subscribe({
+      next: (res) => {
         this.showCardCadastro.emit(false);
-      },
-      (error: any) => {
+      }, error: (error) => {
         console.error(error.error.message);
       }
-    );
+    });
   }
 
-  voltar() {
-    this.showCardCadastro.emit(false)
+  voltar(event: boolean) {
+    this.showCardCadastro.emit(event)
   }
 }

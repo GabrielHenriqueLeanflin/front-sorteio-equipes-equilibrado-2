@@ -67,10 +67,10 @@ a {
 }
 
 input {
-  height: 3rem !important;
+  height: 3.5rem !important;
+  border-radius: 0.8rem;
   border: none;
-  border-radius: 1rem;
-  padding: 0.2rem!important;
+  padding: 0.8rem!important;
   outline: none;
   font-family: "Source Sans 3", sans-serif!important;
   font-size: 1rem!important;
@@ -120,7 +120,7 @@ hr {
   }
   @media (max-width: 767px) {
     width: 100%!important;
-    height: 18rem;
+    height: auto!important;
     margin-top: 2rem;
   }
 }

@@ -1,25 +1,20 @@
 <section class="card-user p-4">
-  <div class="h-100 w-100 flex-column">
+  <div class="h-100 w-100 d-flex flex-column">
 
     <hr class="line mx-auto mt-0">
 
     <h4 class="mt-4 mb-0">Cadastre-se!</h4>
 
-    <form class="mt-4 flex-column h-100" [formGroup]="cadastroForm" (submit)="onSubmit($event)">
+    <form class="mt-4 d-flex flex-column h-100" [formGroup]="cadastroForm" (submit)="onSubmit($event)">
       <input class="h-25" id="name" type="text" name="name" formControlName="name" placeholder="Nome" />
-
-      <input class="h-25 mt-4" id="email" type="email" name="email" formControlName="email" placeholder="E-mail" />
-
-      <div class="flex mt-4">
-        <input class="h-25 w-50" id="password" type="password" name="password" formControlName="password" placeholder="Senha" />
-        <input class="h-25 w-50 ml-2" id="confirm_password" type="password" name="confirm_password" formControlName="confirm_password" placeholder="Confirme sua senha" />
-      </div>
+      <input class="h-25 mt-3" id="email" type="email" name="email" formControlName="email" placeholder="E-mail" />
+      <input class="h-25 mt-3" id="password" type="password" name="password" formControlName="password" placeholder="Senha" />
 
       <button class="btn btn-primary w-50 mt-4 mx-auto" type="submit">
           Criar conta
       </button>
 
-      <a class="mt-2 mx-auto" (click)="voltar()">
+      <a class="mt-2 mx-auto" (click)="voltar(false)">
         Já possui uma conta? <span class="destaque">Acesse aqui!</span>
       </a>
     </form>
