@@ -1,6 +1,7 @@
 @import '../../../styles.scss';
 
-.header{
+/** HEADER */
+header{
   overflow: hidden;
   background-color: $secondary-color;
   height: 5rem;
@@ -72,5 +73,73 @@
     @media (max-width: 767px) {
       width: 45%;
     }
+  }
+}
+
+/** BODY */
+
+.tabelas-dashboard {
+  padding: 7rem;
+  display: flex;
+  width: auto;
+  height: auto;
+  gap: 3rem;
+}
+
+.group-label-jogadores {
+  border-bottom: 0.1rem solid $green-color;
+}
+
+.group-jogadores {
+
+}
+
+.label-jogadores {
+  font-size: 1.2rem;
+  font-family: "Lexend", sans-serif!important;
+  font-weight: bold;
+  margin: 0;
+  padding: 0.7rem;
+  background: $green-color;
+  color: $black-color !important;
+  width: fit-content;
+}
+
+.table-jogadores {
+  background-color: $secondary-color;
+  border-radius: 1rem;
+  padding: 1.5rem;
+}
+
+.text-aviso {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  background: #3e3e59;
+  border-radius: 0.5rem;
+  height: 3rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
+
+table {
+  width: 100%;
+  background-color: $secondary-color;
+  font-family: "Source Sans 3", sans-serif;
+
+  tr {
+    border-bottom: 0.1rem solid rgba(101, 101, 107, 0.18);
+  }
+  th {
+    padding: 0.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  td {
+    font-weight: 300;
+    padding: 0.5rem;
   }
 }

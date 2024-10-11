@@ -20,8 +20,8 @@ export class PlayersService {
     return this.http.put(`${environment.api}/api/atualizar-jogador`, {group_id, name,level, position})
   }
 
-  saveStatus(jogadores) {
-    return this.http.put(`${environment.api}/api/save-status`, jogadores);
+  atualizarStatus(idJogador) {
+    return this.http.post(`${environment.api}/api/atualizar-status`, idJogador);
   }
 
   excluirJogador(group_id, name, level, position) {

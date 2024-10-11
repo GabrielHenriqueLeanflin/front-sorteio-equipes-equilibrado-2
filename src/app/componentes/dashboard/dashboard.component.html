@@ -1,4 +1,4 @@
-<header class="header d-flex justify-content-between">
+<header class="d-flex justify-content-between">
   <h2>
     Sorteio Equipes Equilibrado
   </h2>
@@ -14,57 +14,52 @@
   </div>
 </header>
 
-<div *ngIf="!showCardSorteio" class="">
-  <div class="">
-    <div class="flex flex-col m-3">
-      <div class=" rounded-xl h-14">
-        <p class="text-white justify-center flex items-center text-3xl">
-          JOGADORES
-        </p>
-      </div>
+<div *ngIf="!showCardSorteio" class="tabelas-dashboard">
+  <div class="d-flex flex-column w-50 group-jogadores ">
+    <div class=" rounded-xl h-14 group-label-jogadores">
+      <p class="label-jogadores">
+        Jogadores
+      </p>
+    </div>
 
-      <table class="flex flex-col border rounded h-auto mt-2">
-        <thead class="text-[#0EA900] rounded h-9 p-2 bg-slate-200 gap-1">
-        <tr class="flex">
-          <th class="text-center border-r-2 border-white">Nome</th>
-          <th class="text-center border-r-2 border-white">Qualidade</th>
-          <th class="text-center border-r-2 border-white">
-            Editar / Excluir
-          </th>
+    <div class="table-jogadores mt-4">
 
-          <th class="flex justify-center">
-            Status
-            <svg *ngIf="showSaveStatus"
-                 (click)="saveStatus()"
-                 style="cursor: pointer"
-                 xmlns="http://www.w3.org/2000/svg"
-                 width="16" height="16"
-                 fill="currentColor"
-                 class="bi bi-floppy w-auto ml-2"
-                 viewBox="0 0 16 16">
-              <path d="M11 2H9v3h2z"/>
-              <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
-            </svg>
-          </th>
+      <p *ngIf="userCache?.jogadores.length === 0" class="text-aviso">Não existem jogadores cadastrados.</p>
+      <table *ngIf="userCache?.jogadores.length > 0" class="">
+        <thead class="">
+
+        <tr class="">
+          <th class="">Status</th>
+          <th class="">Nome</th>
+          <th class="">Posição</th>
+          <th class="">Qualidade</th>
+          <th class="">Ações</th>
         </tr>
-        </thead>
-        <tbody class="h-auto">
-        <tr *ngFor="let jogador of userCache?.jogadores; let i = index;" class="flex h-9 p-2 gap-1 mt-2 ">
-          <td class="text-center border-r-[1px] ">{{ jogador.name }}</td>
-          <td class="text-center border-r-[1px] ">{{ jogador.level }}</td>
-          <td class="">
 
-          <td>
-            <input type="checkbox" class="checkbox-row" [checked]="jogador.status" [(ngModel)]="jogador.status" (click)="showSaveStatus2()"/>
+        </thead>
+
+        <tbody class="h-auto">
+
+        <tr *ngFor="let jogador of userCache?.jogadores; let i = index;" class="flex h-9 p-2 gap-1 mt-2 ">
+          <td class="text-center">
+            <img style="cursor: pointer;" [attr.src]="jogador.status === 1 ? '/assets/images/active.png' : '/assets/images/inactive.png'" alt="Status" (click)="saveStatus(jogador.id)">
+          </td>
+          <td class="">{{ jogador.name }}</td>
+          <td class="text-center">{{ jogador.position }}</td>
+          <td class="text-center">{{ jogador.level }}</td>
+          <td class="d-flex justify-content-center">
+            <img style="cursor: pointer;" src="/assets/images/Edit.png">
+            <img style="cursor: pointer;" src="/assets/images/Delete.png">
           </td>
         </tr>
 
         </tbody>
       </table>
     </div>
+
   </div>
 
-  <div class="md:w-1/2 flex flex-col max-h-[509px]">
+  <div class="d-flex flex-column w-50">
     <!--
         <div class="flex items-center justify-center">
           <div class="bg-[#E2E2E2] w-auto h-auto rounded-xl p-3">

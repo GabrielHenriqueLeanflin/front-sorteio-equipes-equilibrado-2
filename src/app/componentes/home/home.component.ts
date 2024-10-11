@@ -19,7 +19,6 @@ export class HomeComponent {
   public showCadastro = false;
 
   showCardCadastro(event: boolean) {
-    console.log(event)
     this.showCadastro = event;
   }
 }

@@ -63,7 +63,6 @@ export class DashboardComponent implements OnInit {
         opcoes.push(this.dividiEquipes());
       }
 
-      this.saveStatus()
       this.equipesSorteadas = opcoes;
       this.showCardSorteio = true;
 
@@ -72,15 +71,15 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  saveStatus() {
-    return new Promise(resolve => this.playersService.saveStatus(this.userCache.jogadores).subscribe(
-      res => {
-        this.showSaveStatus = false
-        resolve(res)
-      }, error => {
-        console.error(error)
+  saveStatus(id) {
+    this.playersService.atualizarStatus(id).subscribe({
+      next: (res)=> {
+        res
+      },
+      error: (error)=> {
+        console.error(error.error.message);
       }
-    ));
+    });
   }
 
   dividiEquipes() {
