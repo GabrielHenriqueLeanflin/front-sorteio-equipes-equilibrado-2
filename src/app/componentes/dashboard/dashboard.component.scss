@@ -80,12 +80,36 @@ header{
 
 /** BODY */
 
+.group {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 100%!important;
+    height: 50% !important;
+  }
+  @media (max-width: 767px) {
+    width: 100%!important;
+    height: 50% !important;
+  }
+
+}
+
 .tabelas-dashboard {
   padding: 7rem;
   display: flex;
   width: auto;
   height: 45rem;
   gap: 3rem;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 10rem 2rem 0;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 50rem;
+  }
+  @media (max-width: 767px) {
+    padding: 10rem 2rem 0;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 50rem;
+  }
 }
 
 .group-label {
@@ -101,6 +125,15 @@ header{
   background: $green-color;
   color: $black-color !important;
   width: fit-content;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+  @media (max-width: 767px) {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
 }
 
 .table-jogadores {
@@ -109,6 +142,15 @@ header{
   background-color: $secondary-color;
   border-radius: 1rem;
   padding: 1.5rem;
+}
+
+.table-jogadores2 {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    overflow: auto;
+  }
+  @media (max-width: 767px) {
+    overflow: auto;
+  }
 }
 
 .text-aviso {
@@ -122,6 +164,28 @@ header{
   align-items: center;
   justify-content: center;
   font-weight: 300;
+}
+
+.group-sortear {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-top: 0!important;
+  }
+  @media (max-width: 767px) {
+    margin-top: 0!important;
+  }
+}
+
+.btn-responsive {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    height: 2.6rem !important;
+    font-size: 0.8rem !important;
+    line-height: 0.8rem !important;
+  }
+  @media (max-width: 767px) {
+    height: 2.6rem !important;
+    font-size: 0.8rem !important;
+    line-height: 0.8rem !important;
+  }
 }
 
 table {
@@ -142,6 +206,42 @@ table {
     font-weight: 300;
     padding: 0.5rem;
   }
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    table-layout: fixed !important;
+    width: 100%;
+    tr {
+    }
+    th {
+      font-size: 0.5rem!important;
+    }
+
+    td {
+      font-size: 0.5rem!important;
+    }
+  }
+  @media (max-width: 767px) {
+    table-layout: fixed !important;
+    tr {
+    }
+    th {
+      font-size: 0.5rem!important;
+    }
+    td {
+      font-size: 0.5rem!important;
+    }
+  }
+}
+
+.imagem_delete {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 0.7rem;
+    height: 1rem;
+  }
+  @media (max-width: 767px) {
+    width: 0.7rem;
+    height: 1rem;
+    }
 }
 
 
@@ -176,6 +276,12 @@ table {
   align-items: center;
   font-weight: 300;
   gap: 1rem;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    font-size: 0.5rem;
+  }
+  @media (max-width: 767px) {
+    font-size: 0.5rem;
+  }
 }
 
 .btnSortear {
@@ -184,4 +290,15 @@ table {
   font-weight: 400!important;
   color: #ffffff!important;
   background-color: #007bff!important;
+}
+
+.imgs-status {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: auto;
+    height: 0.4rem;
+  }
+  @media (max-width: 767px) {
+    width: auto;
+    height: 0.4rem;
+  }
 }

@@ -14,11 +14,12 @@ import {MatIcon} from "@angular/material/icon";
 import {PlayersService} from "../../core/services/players.service";
 import {MatOption, MatSelect} from "@angular/material/select";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatRadioButton, MatRadioGroup} from "@angular/material/radio";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CardSorteadoComponent, CommonModule, ReactiveFormsModule, MatError, MatAccordion, MatExpansionPanel, MatExpansionPanelTitle, MatExpansionPanelDescription, MatIcon, MatFormField, MatExpansionModule, FormsModule, MatSelect, MatOption],
+  imports: [CardSorteadoComponent, CommonModule, ReactiveFormsModule, MatError, MatAccordion, MatExpansionPanel, MatExpansionPanelTitle, MatExpansionPanelDescription, MatIcon, MatFormField, MatExpansionModule, FormsModule, MatSelect, MatOption, MatRadioGroup, MatRadioButton],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -42,6 +43,13 @@ export class DashboardComponent implements OnInit {
   public showAdicionarJogador: boolean;
   public formCriarJogador: any;
   public formCriarJogadorInvalid: boolean = false;
+  public arrayQualidade: { [key: number]: string } = {
+    1: 'Café com Leite',
+    2: 'Mediano',
+    3: 'Bom',
+    4: 'Muito Bom',
+    5: 'Craque',
+  };
 
   async ngOnInit() {
     this.createForm();
@@ -178,6 +186,10 @@ export class DashboardComponent implements OnInit {
       this.playersService.createJogador(this.id, nome, qualidade, posicao).subscribe({
         next: (res) => {
           this.loadJogadores();
+
+          this.formCriarJogador.get('nome').setValue('')
+          this.formCriarJogador.get('qualidade').setValue('')
+          this.formCriarJogador.get('posicao').setValue('')
 
           this.matSnackBar.open('Jogador cadastrado com sucesso!', 'Ok', {
             duration: 5000,

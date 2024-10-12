@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
 /** COLORS */
-$primary-color: #1F1D2B;
+$primary-color: #14122a;
 $secondary-color: #222232;
 $tertiary-color: #0C02A6;
 $green-color: #C8F558;
@@ -21,9 +21,18 @@ app-home{  height: 100%; width: 100%; }
 .mat-mdc-snack-bar-container .mdc-snackbar__surface { background-color: #007bff !important; }
 
 .mat-mdc-form-field-error { color: #ff4747!important; font-size: 0.7rem!important; font-weight: 200!important; }
-.mat-mdc-select { background: $primary-color; height: 2rem; border-radius: 0.4rem;};
+.mat-mdc-select { background: $primary-color; height: 2rem; border-radius: 0.4rem; align-content: center!important;};
+.mat-mdc-select-panel { background-color: #18154d!important; .mdc-list-item__primary-text {color: $light-color!important;}}
+.mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after, .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {color: $green-color!important;}
+.mat-mdc-select {color: $light-color!important;}
+.mat-mdc-select-arrow {color: $light-color!important; margin-right: 0.8rem!important;}
+.mat-mdc-select-value-text { margin-left: 0.7rem!important;}
 
-/** BACKGROUND */
+
+ .mdc-form-field {color: $light-color!important } .mdc-form-field { font-family: "Source Sans 3", sans-serif!important; font-weight: 300!important;}
+.mat-mdc-radio-button .mdc-radio .mdc-radio__native-control:enabled:not(:checked)+.mdc-radio__background .mdc-radio__outer-circle {border-color: rgb(101 101 101)!important;}
+
+  /** BACKGROUND */
 body {
   background-color: $primary-color;
   font-family: "Source Sans 3", sans-serif;
