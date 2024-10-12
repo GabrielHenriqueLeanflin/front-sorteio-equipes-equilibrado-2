@@ -14,9 +14,9 @@
   </div>
 </header>
 
-<div class="tabelas-dashboard">
+<div *ngIf="!showCardSorteio" class="tabelas-dashboard">
   <!-- JOGADORES -->
-  <div *ngIf="!showCardSorteio" class="d-flex flex-column w-50 group">
+  <div class="d-flex flex-column w-50 group">
     <div class=" rounded-xl h-14 group-label">
       <p class="label">
         Jogadores
@@ -67,7 +67,7 @@
   </div>
 
   <!-- SORTEAR -->
-  <div *ngIf="!showAdicionarJogador" class="d-flex flex-column w-50 group">
+  <div *ngIf="!showAdicionarJogador && !showCardSorteio" class="d-flex flex-column w-50 group">
     <div class="group-label">
       <p class="label">
         Sortear
@@ -91,9 +91,9 @@
           <mat-select type="number" formControlName="numero_equipes">
             <mat-option [value]="2">2 Equipes</mat-option>
             <mat-option [value]="3">3 Equipes</mat-option>
-            <mat-option [value]="3">4 Equipes</mat-option>
-            <mat-option [value]="3">5 Equipes</mat-option>
-            <mat-option [value]="3">6 Equipes</mat-option>
+            <mat-option [value]="4">4 Equipes</mat-option>
+            <mat-option [value]="5">5 Equipes</mat-option>
+            <mat-option [value]="6">6 Equipes</mat-option>
           </mat-select>
           <mat-error *ngIf="formSorteioInvalid">Campo obrigatório</mat-error>
         </div>

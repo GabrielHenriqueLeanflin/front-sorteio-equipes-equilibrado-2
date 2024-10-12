@@ -71,8 +71,14 @@ export class DashboardComponent implements OnInit {
   }
 
   getIdUser() {
-    this.id = localStorage.getItem('id')
-    this.name = localStorage.getItem("user")
+    this.id = localStorage.getItem('id');
+
+    const fullName = localStorage.getItem("user");
+    if (fullName) {
+      this.name = fullName.split(' ')[0]; // Pega apenas o primeiro nome
+    } else {
+      this.name = ''; // Caso não haja valor no localStorage
+    }
   }
 
   sortear() {
@@ -93,8 +99,6 @@ export class DashboardComponent implements OnInit {
   }
 
   saveStatus(id, statusJogador) {
-    console.log(id)
-    console.log(statusJogador)
     this.playersService.atualizarStatus(id, statusJogador).subscribe({
       next: (res)=> {
         this.loadJogadores();
@@ -120,11 +124,11 @@ export class DashboardComponent implements OnInit {
     }
 
     // Jogadores Bons
-    let playerBom = this.userCache.jogadores.filter((item) => item.level >= 9);
+    let playerBom = this.arrayJogadoresAtivos.filter((item) => item.level >= 9);
     playerBom.sort(() => Math.random() - 0.5);
 
     // Jogadores Medianos
-    let playerMediado = this.userCache.jogadores.filter((item) => item.level <= 8);
+    let playerMediado = this.arrayJogadoresAtivos.filter((item) => item.level <= 8);
     playerMediado.sort(() => Math.random() - 0.5);
 
     playerBom.forEach((jogador) => {
@@ -147,7 +151,6 @@ export class DashboardComponent implements OnInit {
   async loadJogadores() {
     this.userCache = await this.getAllJogadores()
     this.arrayJogadoresAtivos = this.userCache.jogadores.filter(i => i.status === 1);
-    console.log(this.arrayJogadoresAtivos)
   }
 
   getAllJogadores(): Promise<any> {
