@@ -113,3 +113,17 @@ ol li {
   color: #ffffff!important;
   background-color: #007bff!important;
 }
+
+.text-aviso {
+  padding: 1rem;
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  background: #3e3e59;
+  border-radius: 0.5rem;
+  height: 3rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+}
