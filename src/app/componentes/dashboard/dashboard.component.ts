@@ -150,6 +150,7 @@ export class DashboardComponent implements OnInit {
 
   async loadJogadores() {
     this.userCache = await this.getAllJogadores()
+    this.userCache.jogadores.sort((a, b) => b.level - a.level);
     this.arrayJogadoresAtivos = this.userCache.jogadores.filter(i => i.status === 1);
   }
 
