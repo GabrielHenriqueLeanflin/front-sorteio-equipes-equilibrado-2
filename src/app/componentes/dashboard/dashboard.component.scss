@@ -153,6 +153,15 @@ header{
   }
 }
 
+.table-jogadores3 {
+  @media (min-width: 768px) and (max-width: 1024px) {
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 1rem;
+  }
+}
+
 .text-aviso {
   margin: 0;
   font-family: "Source Sans 3", sans-serif;
