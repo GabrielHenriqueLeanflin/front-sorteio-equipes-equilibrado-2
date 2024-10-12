@@ -12,11 +12,13 @@ import {
 } from "@angular/material/expansion";
 import {MatIcon} from "@angular/material/icon";
 import {PlayersService} from "../../core/services/players.service";
+import {MatOption, MatSelect} from "@angular/material/select";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CardSorteadoComponent, CommonModule, ReactiveFormsModule, MatError, MatAccordion, MatExpansionPanel, MatExpansionPanelTitle, MatExpansionPanelDescription, MatIcon, MatFormField, MatExpansionModule, FormsModule],
+  imports: [CardSorteadoComponent, CommonModule, ReactiveFormsModule, MatError, MatAccordion, MatExpansionPanel, MatExpansionPanelTitle, MatExpansionPanelDescription, MatIcon, MatFormField, MatExpansionModule, FormsModule, MatSelect, MatOption],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -25,6 +27,7 @@ export class DashboardComponent implements OnInit {
   public authService = inject(AuthService);
   public playersService = inject(PlayersService)
   public formBuilder = inject(FormBuilder);
+  public matSnackBar = inject(MatSnackBar);
 
   /** Variáveis */
   public id: any;
@@ -35,6 +38,10 @@ export class DashboardComponent implements OnInit {
   public equipesSorteadas: any;
   public showCardSorteio: boolean = false;
   public showSaveStatus: any;
+  public arrayJogadoresAtivos: any;
+  public showAdicionarJogador: boolean;
+  public formCriarJogador: any;
+  public formCriarJogadorInvalid: boolean = false;
 
   async ngOnInit() {
     this.createForm();
@@ -46,6 +53,12 @@ export class DashboardComponent implements OnInit {
     this.formSorteio = this.formBuilder.group({
       numero_opcoes: ['', [Validators.required]],
       numero_equipes: ['', [Validators.required]],
+    })
+
+    this.formCriarJogador = this.formBuilder.group({
+      nome: ['', [Validators.required]],
+      qualidade: ['', [Validators.required]],
+      posicao: ['', [Validators.required]],
     })
   }
 
@@ -71,10 +84,12 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  saveStatus(id) {
-    this.playersService.atualizarStatus(id).subscribe({
+  saveStatus(id, statusJogador) {
+    console.log(id)
+    console.log(statusJogador)
+    this.playersService.atualizarStatus(id, statusJogador).subscribe({
       next: (res)=> {
-        res
+        this.loadJogadores();
       },
       error: (error)=> {
         console.error(error.error.message);
@@ -119,6 +134,8 @@ export class DashboardComponent implements OnInit {
 
   async loadJogadores() {
     this.userCache = await this.getAllJogadores()
+    this.arrayJogadoresAtivos = this.userCache.jogadores.filter(i => i.status === 1);
+    console.log(this.arrayJogadoresAtivos)
   }
 
   getAllJogadores(): Promise<any> {
@@ -139,7 +156,54 @@ export class DashboardComponent implements OnInit {
     this.showCardSorteio = $event;
   }
 
-  showSaveStatus2() {
-    this.showSaveStatus = true;
+  addJogador() {
+    this.showAdicionarJogador = true;
+  }
+
+  voltar() {
+    this.showAdicionarJogador = false;
+  }
+
+  salvarJogador() {
+    if (this.formCriarJogador.valid) {
+      let nome = this.formCriarJogador.get('nome').value;
+      let qualidade = this.formCriarJogador.get('qualidade').value;
+      let posicao = this.formCriarJogador.get('posicao').value;
+      console.log(nome, qualidade, posicao);
+
+      this.playersService.createJogador(this.id, nome, qualidade, posicao).subscribe({
+        next: (res) => {
+          this.loadJogadores();
+
+          this.matSnackBar.open('Jogador cadastrado com sucesso!', 'Ok', {
+            duration: 5000,
+            verticalPosition: 'top',
+          });
+        },
+        error: (error)=> {
+          console.log(error)
+        }
+      });
+      this.showAdicionarJogador = false;
+    } else {
+      this.formCriarJogadorInvalid = true;
+    }
+  }
+
+  editJogador() {
+
+  }
+
+  removerJogador(idJogador) {
+    console.log(idJogador)
+    this.playersService.excluirJogador(idJogador).subscribe({
+      next: (res) => {
+        this.loadJogadores();
+        console.log(res)
+      },
+      error: (error) => {
+        console.log(error)
+      }
+    })
   }
 }

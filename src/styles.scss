@@ -16,9 +16,12 @@ html, body {margin: 0; padding: 0; height: 100% ;width: 100%;}
 app-home{  height: 100%; width: 100%; }
 
 /** SNACK BAR */
-.mat-mdc-snack-bar-container .mdc-snackbar__label { color: $tertiary-color!important; }
-.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) { color: $tertiary-color!important; }
-.mat-mdc-snack-bar-container .mdc-snackbar__surface { background-color: $light-color!important; }
+.mat-mdc-snack-bar-container .mdc-snackbar__label { color: $light-color!important; }
+.mat-mdc-snack-bar-container .mat-mdc-button.mat-mdc-snack-bar-action:not(:disabled) { color: $light-color !important; }
+.mat-mdc-snack-bar-container .mdc-snackbar__surface { background-color: #3e3e59!important; }
+
+.mat-mdc-form-field-error { color: #ff4747!important; font-size: 0.7rem!important; font-weight: 200!important; }
+.mat-mdc-select { background: $primary-color; height: 2rem; border-radius: 0.4rem;};
 
 /** BACKGROUND */
 body {
@@ -99,13 +102,13 @@ hr {
 
 /** BOTAO BOOSTRAP */
 .btn {
-  font-family: "Source Sans 3", sans-serif!important;
-  font-weight: bold!important;
-  color: $black-color!important;
-  border: $green-color!important;
-  background-color: $green-color!important;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  color: $black-color;
+  border: $green-color;
+  background-color: $green-color;
   @media (max-width: 767px) {
-    margin-top: 1rem!important;
+    margin-top: 1rem;
   }
 }
 

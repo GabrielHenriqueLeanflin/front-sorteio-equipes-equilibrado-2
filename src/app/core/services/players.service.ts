@@ -20,13 +20,14 @@ export class PlayersService {
     return this.http.put(`${environment.api}/api/atualizar-jogador`, {group_id, name,level, position})
   }
 
-  atualizarStatus(idJogador) {
-    return this.http.post(`${environment.api}/api/atualizar-status`, idJogador);
+  atualizarStatus(idJogador ,status) {
+    let params = {id: idJogador, status: status}
+    return this.http.put(`${environment.api}/api/atualizar-status`, params);
   }
 
-  excluirJogador(group_id, name, level, position) {
+  excluirJogador(idJogador) {
     return this.http.delete(`${environment.api}/api/excluir-jogador`, {
-      params: { group_id, name, level, position }
+      params: { idJogador }
     });
   }
 }

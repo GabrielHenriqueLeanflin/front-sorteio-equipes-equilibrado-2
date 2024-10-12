@@ -84,19 +84,15 @@ header{
   padding: 7rem;
   display: flex;
   width: auto;
-  height: auto;
+  height: 45rem;
   gap: 3rem;
 }
 
-.group-label-jogadores {
+.group-label {
   border-bottom: 0.1rem solid $green-color;
 }
 
-.group-jogadores {
-
-}
-
-.label-jogadores {
+.label {
   font-size: 1.2rem;
   font-family: "Lexend", sans-serif!important;
   font-weight: bold;
@@ -108,6 +104,8 @@ header{
 }
 
 .table-jogadores {
+  overflow: hidden;
+  height: 100%;
   background-color: $secondary-color;
   border-radius: 1rem;
   padding: 1.5rem;
@@ -144,4 +142,46 @@ table {
     font-weight: 300;
     padding: 0.5rem;
   }
+}
+
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #2d2d3b;
+  border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #494949;
+}
+
+.text-legenda {
+  margin: 0;
+  font-family: "Source Sans 3", sans-serif;
+  border-radius: 0.5rem;
+  height: 3rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  gap: 1rem;
+}
+
+.btnSortear {
+  border: $green-color!important;
+  font-family: "Source Sans 3", sans-serif!important;
+  font-weight: 400!important;
+  color: #ffffff!important;
+  background-color: #007bff!important;
 }
