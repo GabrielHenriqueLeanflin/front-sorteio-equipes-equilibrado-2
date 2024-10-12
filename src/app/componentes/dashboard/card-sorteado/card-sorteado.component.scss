@@ -5,11 +5,17 @@ section {
   align-items: center;
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    padding: 2rem;
+    padding: 7rem 2rem 2rem;
+    .div-acoes {
+      margin-top: 1rem!important;
+    }
 
   }
   @media (max-width: 767px) {
-    padding: 2rem;
+    padding: 7rem 2rem 2rem;
+    .div-acoes {
+      margin-top: 1rem!important;
+    }
   }
 }
 
