@@ -90,6 +90,10 @@ export class DashboardComponent implements OnInit {
     this.playersService.atualizarStatus(id, statusJogador).subscribe({
       next: (res)=> {
         this.loadJogadores();
+        this.matSnackBar.open('Status do Jogador atualizado com sucesso!', 'Ok', {
+          duration: 5000,
+          verticalPosition: 'top',
+        });
       },
       error: (error)=> {
         console.error(error.error.message);
@@ -199,8 +203,11 @@ export class DashboardComponent implements OnInit {
     this.playersService.excluirJogador(idJogador).subscribe({
       next: (res) => {
         this.loadJogadores();
-        console.log(res)
-      },
+        this.matSnackBar.open('Jogador excluido com sucesso!', 'Ok', {
+          duration: 5000,
+          verticalPosition: 'top',
+        });
+        },
       error: (error) => {
         console.log(error)
       }
