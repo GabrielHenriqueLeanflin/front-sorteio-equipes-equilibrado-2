@@ -121,6 +121,12 @@ hr {
   }
 }
 
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+  color: #838383 !important;
+  background-color: #b0b0b0 !important;
+  opacity: 50%!important;
+}
+
 /** CARD LOGIN e CADASTRO */
 .card-user {
   background-color: $secondary-color;

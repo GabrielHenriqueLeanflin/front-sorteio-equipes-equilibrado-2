@@ -64,6 +64,11 @@
         <p class="text-legenda"><img class="imgs-status" src="/assets/images/yellow.png">Cadastrado: {{ userCache?.jogadores?.length }} Jogadores</p>
       </div>
     </div>
+
+    <div class="d-flex flex-column mt-2">
+      <p class="text-legenda h-auto">Instruções:</p>
+      <p class="text-legenda h-auto">- Para alterar o status do jogador, clique em cima da cor do status.</p>
+    </div>
   </div>
 
   <!-- SORTEAR -->
@@ -100,7 +105,7 @@
       </div>
 
       <div class="d-flex">
-        <button class="btn btn-primary btn-responsive w-25 mx-auto" (click)="sortear()">
+        <button class="btn btn-primary btn-responsive w-25 mx-auto" [disabled]="this.userCache.jogadores.length <= 0" (click)="sortear()">
           Gerar Equipes
         </button>
 
