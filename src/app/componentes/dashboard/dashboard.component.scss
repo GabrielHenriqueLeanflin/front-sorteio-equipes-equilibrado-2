@@ -222,11 +222,15 @@ table {
     tr {
     }
     th {
-      font-size: 0.5rem!important;
+      font-size: 0.8rem!important;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     td {
-      font-size: 0.5rem!important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.8rem!important;
     }
   }
   @media (max-width: 767px) {
@@ -234,10 +238,14 @@ table {
     tr {
     }
     th {
-      font-size: 0.5rem!important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.8rem!important;
     }
     td {
-      font-size: 0.5rem!important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.8rem!important;
     }
   }
 }
@@ -286,10 +294,10 @@ table {
   font-weight: 300;
   gap: 1rem;
   @media (min-width: 768px) and (max-width: 1024px) {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
   @media (max-width: 767px) {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
 }
 
@@ -302,12 +310,4 @@ table {
 }
 
 .imgs-status {
-  @media (min-width: 768px) and (max-width: 1024px) {
-    width: auto;
-    height: 0.4rem;
-  }
-  @media (max-width: 767px) {
-    width: auto;
-    height: 0.4rem;
-  }
 }

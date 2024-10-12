@@ -3,6 +3,14 @@
 section {
   padding: 8rem;
   align-items: center;
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    padding: 2rem;
+
+  }
+  @media (max-width: 767px) {
+    padding: 2rem;
+  }
 }
 
 .label {
@@ -36,6 +44,12 @@ section {
   background-color: $secondary-color;
   border-radius: 1rem;
   padding: 1.5rem;
+  @media (min-width: 768px) and (max-width: 1024px) {
+    overflow: auto;
+  }
+  @media (max-width: 767px) {
+    overflow: auto;
+  }
 }
 
 .label-equipe {
@@ -90,4 +104,12 @@ ol li {
 .container-sorteado {
   min-width: 35%;
   max-width: 100%;
+}
+
+.btnVoltar {
+  border: $green-color!important;
+  font-family: "Source Sans 3", sans-serif!important;
+  font-weight: 400!important;
+  color: #ffffff!important;
+  background-color: #007bff!important;
 }

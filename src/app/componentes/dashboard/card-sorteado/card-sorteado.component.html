@@ -8,6 +8,11 @@
     </div>
   </div>
 
+  <div class="d-flex w-100 mt-5">
+    <button class="btn btn-primary btn-responsive w-25 mx-auto mt-2" (click)="copiarTimes()">Copiar</button>
+    <button class="btn btnVoltar btn-primary btn-responsive w-25 mx-auto mt-2" (click)="voltar()">Voltar</button>
+  </div>
+
   <ng-container *ngFor="let opcoes of equipesSorteadasInput(); let i = index">
     <div class="d-flex flex-column container-sorteado mt-5">
       <div class="group-label">
@@ -28,8 +33,4 @@
       </div>
     </div>
   </ng-container>
-
-  <button class="btn btn-primary btn-responsive w-25 mx-auto mt-5" (click)="copiarTimes()">Copiar</button>
-
-  <button class="btn btn-primary btn-responsive w-25 mx-auto mt-5" (click)="voltar()">Voltar</button>
 </section>
