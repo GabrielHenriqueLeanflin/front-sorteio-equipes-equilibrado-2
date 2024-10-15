@@ -128,7 +128,7 @@ export class DashboardComponent implements OnInit {
     playerBom.sort(() => Math.random() - 0.5);
 
     // Jogadores Medianos
-    let playerMediado = this.arrayJogadoresAtivos.filter((item) => item.level <= 4);
+    let playerMediado = this.arrayJogadoresAtivos.filter((item) => item.level <= 3);
     playerMediado.sort(() => Math.random() - 0.5);
 
     playerBom.forEach((jogador) => {
